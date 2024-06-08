@@ -5,7 +5,7 @@ import { AiFillLock, AiFillUnlock} from "react-icons/ai";
 
 import { VotingContext } from "../../context/Voter";
 import Style from './NavBar.module.css';
-import loading from '../../assets/loading2.gif'
+import loading from '../../assets/logo.png'
 
 const NavBar = () => {
   const {connectWallet, error, currentAccount} = useContext(VotingContext);
