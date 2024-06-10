@@ -142,7 +142,7 @@ export const VotingProvider = ({ children}) => {
             const voter = await contract.voterRight(address, name, url, fileUrl);
             voter.wait();
             console.log(voter);
-
+            location.reload();
             router.push("/voterList")
         } catch (error) {
             console.log(error);
@@ -191,7 +191,9 @@ export const VotingProvider = ({ children}) => {
             const contract = fetchContract(signer);
 
             const votedList = await contract.vote(voterAdderess, voterId);
-            console.log(votedList)
+            console.log(votedList);
+            votedList.wait();
+            location.reload();
         } catch (error) {
             console.log(error);
         }
@@ -231,6 +233,7 @@ export const VotingProvider = ({ children}) => {
 
             const candidate = await contract.setCandidate(address, age, name, fileUrl, url);
             candidate.wait();
+            location.reload();
             
             console.log(candidate)
             // router.push("/")
